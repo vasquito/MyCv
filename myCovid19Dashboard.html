@@ -21,7 +21,18 @@
     <div class="container bg-default" style="left:0;width:100%;margin: 0px;">
         <div class="row">
             <div class="col-md-12">
-                <p style="margin: 0px; color:#ffffff">Para tener una resolucion optima, se recomienda usar Tablet o PC</p>
+                <p style="margin: 0px; color:#ffffff">
+                    La resolución actual que tienes en pantalla es: 
+                    <script> 
+                    if (screen.width < 1024) 
+                        document.write ("Insuficiente, se recomienda usar Tablet (Modo horizontal) o PC") 
+                    else 
+                        if (screen.width < 1280) 
+                            document.write ("Suficiente") 
+                        else
+                            document.write ("Óptima") 
+                    </script>
+                </p>
             </div>
         </div>
         <div class="row">
