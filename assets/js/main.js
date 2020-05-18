@@ -371,7 +371,17 @@ jQuery(document).ready(function($) {
 				$(this).append("<i class='glyphicon glyphicon-chevron-up arrow-tabs'></i>");
 			}else {
 				$(this).append("<i class='glyphicon glyphicon-chevron-down arrow-tabs'></i>");
-			}
+            }
+            
+            $('.skillbar').each(function() {
+                $(this).find('.skillbar-bar').width(0);
+            });
+    
+            $('.skillbar').each(function() {
+                $(this).find('.skillbar-bar').animate({
+                    width: $(this).attr('data-percent')
+                }, 2000);
+            });
 	  });
 	  
 	   $(".resp-tabs-container h2.resp-accordion").click(function(){
@@ -385,7 +395,16 @@ jQuery(document).ready(function($) {
 					$(this).find("i.arrow-tabs").removeClass("glyphicon-chevron-up").addClass("glyphicon-chevron-down");
 				}
 		  });
-	  
+          
+          $('.skillbar').each(function() {
+                $(this).find('.skillbar-bar').width(0);
+            });
+
+            $('.skillbar').each(function() {
+                $(this).find('.skillbar-bar').animate({
+                    width: $(this).attr('data-percent')
+                }, 2000);
+            });
 			
 	  });
 
@@ -394,7 +413,7 @@ jQuery(document).ready(function($) {
     /* -------------------------------- skillbar ---------------------------- */
     /* ---------------------------------------------------------------------- */
 
-    $('.tabs-resume').click(function() {
+    $('.tabs-profile').click(function() {
 
         $('.skillbar').each(function() {
             $(this).find('.skillbar-bar').width(0);
@@ -408,7 +427,7 @@ jQuery(document).ready(function($) {
 
     });
 
-    $('#resume').prev('h2.resp-accordion').click(function() {
+    $('#profile').prev('h2.resp-accordion').click(function() {
 
         $('.skillbar').each(function() {
             $(this).find('.skillbar-bar').width(0);
